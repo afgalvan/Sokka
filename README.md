@@ -1,15 +1,16 @@
-<img src="clinjection.png" alt="clinjected logo" width="20%"/>
+<img src="boomerang.png" alt="sokka logo" width="20%"/>
 
-# CLInjected
+# Sokka
 
-![NuGet](https://github.com/afgalvan/CLInjected/actions/workflows/publish.yml/badge.svg)
-![.NET](https://github.com/afgalvan/CLInjected/actions/workflows/dotnet.yml/badge.svg)
+![NuGet](https://github.com/afgalvan/Sokka/actions/workflows/publish.yml/badge.svg)
+![.NET](https://github.com/afgalvan/Sokka/actions/workflows/dotnet.yml/badge.svg)
 
-C# console project structure with dependency injection.
+Template for C# socket server with dependency injection in .NET 5.
 
-[NuGet Package](https://www.nuget.org/packages/CLInjected.Template/)
+[NuGet Package](https://www.nuget.org/packages/Sokka.Template/)
 
 ## Features
+- Sockets
 - Dependency injection
 - Docker & docker compose
 - editorconfig
@@ -17,11 +18,11 @@ C# console project structure with dependency injection.
 ## Installation
 
 ```bash
-dotnet new -i CLInjected.Template
+dotnet new -i Sokka.Template
 ```
 
 ## Usage
 
 ```bash
-dotnet new cli-di -o Your.Project
+dotnet new sokka -o Your.Project
 ```
