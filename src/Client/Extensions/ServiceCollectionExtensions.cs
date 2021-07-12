@@ -1,18 +1,19 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Sokka.Server.Extensions
+namespace Client.Extensions
 {
     public static class ServiceCollectionExtensions
     {
         public static void AddHostedServices(this IServiceCollection services)
         {
-            services.AddHostedService<Server>();
+            services.AddHostedService<App>();
         }
 
         public static void AddApplicationServices(
             this IServiceCollection services, IConfiguration configuration)
         {
+            // Inject dependencies
         }
     }
 }

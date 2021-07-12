@@ -1,8 +1,9 @@
+using Client.Extensions;
+using Core.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Sokka.Client.Extensions;
 
-namespace Sokka.Client
+namespace Client
 {
     public class Startup
     {
@@ -16,6 +17,7 @@ namespace Sokka.Client
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHostedServices();
+            services.AddSocketSettings(Configuration);
             services.AddApplicationServices(Configuration);
         }
     }

@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
+using Core.Infrastructure;
 using Microsoft.Extensions.Hosting;
-using Sokka.Server.Settings;
 
-namespace Sokka.Server
+namespace Server
 {
     internal static class Program
     {
