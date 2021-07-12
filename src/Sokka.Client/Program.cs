@@ -1,12 +1,13 @@
-﻿using CLInjected.Settings;
+﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
+using Sokka.Client.Settings;
 
-namespace CLInjected
+namespace Sokka.Client
 {
     internal static class Program
     {
-        private static void Main(string[] args) =>
-            CreateHostBuilder(args).Build().Run();
+        private static async Task Main(string[] args) =>
+            await CreateHostBuilder(args).Build().RunAsync();
 
         private static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)

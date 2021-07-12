@@ -1,11 +1,11 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Andres Galvan",
-  "classifications": ["Console", "C#", "Dependency injection"],
-  "identity": "CLInjected",
-  "name": "CLInjected: Console application with dependency injection",
-  "shortName": "cli-di",
-  "sourceName": "CLInjected",
+  "classifications": ["Sockets", "Dependency Injection"],
+  "identity": "Sokka",
+  "name": "Socket server and console client template.",
+  "shortName": "sokka",
+  "sourceName": "Sokka",
   "preferNameDirectory": true,
   "tags": {
     "language": "C#",

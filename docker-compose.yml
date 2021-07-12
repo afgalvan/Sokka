@@ -1,11 +1,23 @@
 ---
-version: "3.3"
+version: "3.8"
+
+x-service: &default-service
+  environment:
+    - ENVIRONMENT=Docker
+  ports:
+      - "4040:4040"
 
 services:
-  app:
-    container_name: application-name
+  server:
+    <<: *default-service
+    container_name: sokka_server
     build:
       context: .
-      dockerfile: src/CLInjected/Dockerfile
-    environment:
-      - ENVIRONMENT=Docker.
+      dockerfile: src/Sokka.Server/Dockerfile
+
+  client:
+    <<: *default-service
+    container_name: sokka_client
+    build:
+      context: .
+      dockerfile: src/Sokka.Client/Dockerfile

@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.Configuration;
 
-namespace CLInjected.Settings
+namespace Sokka.Server.Settings
 {
     public static class Configuration
     {
@@ -15,7 +15,7 @@ namespace CLInjected.Settings
 #nullable enable
             string? args = Environment.GetEnvironmentVariable("ENVIRONMENT");
 #nullable disable
-            return $"appsettings.{args ?? ""}json";
+            return $"appsettings.{(args == null ? "" : args + ".")}json";
         }
     }
 }

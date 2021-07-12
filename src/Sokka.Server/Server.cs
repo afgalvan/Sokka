@@ -4,26 +4,25 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
-namespace CLInjected
+namespace Sokka.Server
 {
-    public class App : IHostedService
+    public class Server : IHostedService
     {
         private readonly IHostApplicationLifetime _appLifetime;
         private readonly IConfiguration           _configuration;
 
-        public App(IHostApplicationLifetime appLifetime, IConfiguration configuration)
+        public Server(IHostApplicationLifetime appLifetime,
+            IConfiguration configuration)
         {
-            _appLifetime      = appLifetime;
-            _configuration    = configuration;
+            _appLifetime    = appLifetime;
+            _configuration  = configuration;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            _appLifetime.ApplicationStarted.Register(() =>
-                Task.Run(() =>
-                {
-                    Console.WriteLine("Hello, World!");
-                })
+            _appLifetime.ApplicationStarted.Register(async () =>
+                await Task.Run(() => { Console.WriteLine("Server started"); },
+                    cancellationToken)
             );
 
             return Task.CompletedTask;

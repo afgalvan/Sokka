@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CLInjected.Extensions
+namespace Sokka.Client.Extensions
 {
     public static class ServiceCollectionExtensions
     {

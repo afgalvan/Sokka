@@ -1,8 +1,8 @@
-using CLInjected.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Sokka.Server.Extensions;
 
-namespace CLInjected
+namespace Sokka.Server
 {
     public class Startup
     {

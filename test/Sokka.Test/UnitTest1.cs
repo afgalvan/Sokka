@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace CLInjected.Test
+namespace Sokka.Test
 {
     public class Tests
     {
