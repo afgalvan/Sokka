@@ -1,4 +1,5 @@
-﻿**/.dockerignore
+﻿Client
+**/.dockerignore
 **/.env
 **/.git
 **/.gitignore

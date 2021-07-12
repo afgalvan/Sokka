@@ -6,6 +6,8 @@ x-service: &default-service
     - ENVIRONMENT=Docker
   ports:
       - "4040:4040"
+  networks:
+    - sokka_network
 
 services:
   server:
@@ -13,11 +15,14 @@ services:
     container_name: sokka_server
     build:
       context: .
-      dockerfile: src/Sokka.Server/Dockerfile
+      dockerfile: src/Server/Dockerfile
 
   client:
     <<: *default-service
     container_name: sokka_client
     build:
       context: .
-      dockerfile: src/Sokka.Client/Dockerfile
+      dockerfile: src/Client/Dockerfile
+
+networks:
+  sokka_network:

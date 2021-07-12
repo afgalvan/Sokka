@@ -48,7 +48,7 @@ dotnet run
 docker-compose build
 
 # Run the server container
-docker-compose run --rm server
+docker-compose up server
 
 # Run the client container
 docker-compose run --rm client

@@ -1,4 +1,5 @@
-﻿**/.dockerignore
+﻿Server
+**/.dockerignore
 **/.env
 **/.git
 **/.gitignore

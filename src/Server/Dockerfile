@@ -3,16 +3,17 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["src/Sokka.Server/Sokka.Server.csproj", "Sokka.Server/"]
-RUN dotnet restore "Sokka.Server/Sokka.Server.csproj"
+COPY ["src/Server/Server.csproj", "Server/"]
+COPY ["src/Core/Core.csproj", "Core/"]
+RUN dotnet restore "Server/Server.csproj"
 COPY /src .
-WORKDIR "/src/Sokka.Server"
-RUN dotnet build "Sokka.Server.csproj" -c Release -o /app/build
+WORKDIR "/src/Server"
+RUN dotnet build "Server.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Sokka.Server.csproj" -c Release -o /app/publish
+RUN dotnet publish "Server.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Sokka.Server.dll"]
+ENTRYPOINT ["dotnet", "Server.dll"]
