@@ -3,11 +3,11 @@
   <metadata>
     <id>Sokka.Template</id>
     <title>Sokka.Template</title>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <authors>Andres Galvan</authors>
     <owners>Andres Galvan</owners>
     <description>
-      Socket server and console client template
+      Fix docker and docker compose template
     </description>
     <language>en-US</language>
     <projectUrl>https://github.com/afgalvan/Sokka</projectUrl>
