@@ -16,7 +16,7 @@ namespace Core.Extensions
                 configuration.GetSection("Server");
 
             string host = serverConfig["Host"];
-            var    port = Convert.ToInt32(serverConfig["Port"], CultureInfo.CurrentCulture);
+            var    port = Convert.ToInt32(serverConfig["Port"], CultureInfo.InvariantCulture);
 
             services.AddScoped(_ => new SocketSetting(host, port));
         }
