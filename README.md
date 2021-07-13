@@ -4,7 +4,7 @@
 
 [![NuGet](https://github.com/afgalvan/Sokka/actions/workflows/publish.yml/badge.svg)](https://github.com/afgalvan/Sokka/actions/workflows/dotnet.yml)
 [![.NET](https://github.com/afgalvan/Sokka/actions/workflows/dotnet.yml/badge.svg)](https://github.com/afgalvan/Sokka/actions/workflows/publish.yml)
-[![Nuget Version](https://img.shields.io/nuget/v/CLInjected.Template.svg)](https://www.nuget.org/packages/Sokka.Template/)
+[![Nuget Version](https://img.shields.io/nuget/v/Sokka.Template.svg)](https://www.nuget.org/packages/Sokka.Template/)
 
 Template for C# socket server with dependency injection in .NET 5.
 
