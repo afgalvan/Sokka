@@ -3,18 +3,18 @@
   <metadata>
     <id>Sokka.Template</id>
     <title>Sokka.Template</title>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <authors>Andres Galvan</authors>
     <owners>Andres Galvan</owners>
     <description>
-      Fix docker and docker compose template
+      Socket server and console client template
     </description>
     <language>en-US</language>
     <projectUrl>https://github.com/afgalvan/Sokka</projectUrl>
     <repository type="github" url="https://github.com/afgalvan/Sokka" />
     <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>Initial release</releaseNotes>
+    <releaseNotes>Fix docker and docker compose template</releaseNotes>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
