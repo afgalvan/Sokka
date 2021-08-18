@@ -1,7 +1,9 @@
+using System;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 using Core.Domain;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NetCoreServer;
@@ -12,17 +14,17 @@ namespace Server
     public class Server : TcpServer, IHostedService
     {
         private readonly ILogger<Server>          _logger;
-        private readonly ILogger<ClientSession>   _sessionLogger;
+        private readonly IServiceProvider         _serviceProvider;
         private readonly IHostApplicationLifetime _appLifetime;
 
         public Server(SocketSetting config,
             IHostApplicationLifetime appLifetime,
-            ILogger<Server> logger, ILogger<ClientSession> sessionLogger) :
+            ILogger<Server> logger, IServiceProvider serviceProvider) :
             base(config.Host, config.Port)
         {
-            _appLifetime   = appLifetime;
-            _logger        = logger;
-            _sessionLogger = sessionLogger;
+            _appLifetime     = appLifetime;
+            _logger          = logger;
+            _serviceProvider = serviceProvider;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -50,7 +52,8 @@ namespace Server
 
         protected override TcpSession CreateSession()
         {
-            return new ClientSession(this, _sessionLogger);
+            var sessionLogger = _serviceProvider.GetRequiredService<ILogger<ClientSession>>();
+            return new ClientSession(this, sessionLogger);
         }
 
         protected override void OnError(SocketError error)
